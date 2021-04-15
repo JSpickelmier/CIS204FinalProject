@@ -37,17 +37,26 @@ public class SpaceApp extends javax.swing.JFrame {
         NeptuneBTN = new javax.swing.JRadioButton();
         PlutoBTN = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        SateliteBOX = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         OutputTXTBOX = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        ReturnCHBOX = new javax.swing.JCheckBox();
+        LowOrbitCHBOX = new javax.swing.JCheckBox();
+        LandingCHBOX = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         MercuryBTN.setText("Mercury");
+        MercuryBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MercuryBTNActionPerformed(evt);
+            }
+        });
 
         VenusBTN.setText("Venus");
 
@@ -65,12 +74,12 @@ public class SpaceApp extends javax.swing.JFrame {
 
         PlutoBTN.setText("Pluto");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        SateliteBOX.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(SateliteBOX);
 
         jButton1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
         jButton1.setText("Calculate!");
@@ -91,6 +100,26 @@ public class SpaceApp extends javax.swing.JFrame {
 
         jLabel3.setText("jLabel3");
 
+        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Modifiers");
+
+        ReturnCHBOX.setText("Return Trip");
+
+        LowOrbitCHBOX.setText("Destination Low Orbit");
+        LowOrbitCHBOX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LowOrbitCHBOXActionPerformed(evt);
+            }
+        });
+
+        LandingCHBOX.setText("Destination Surface Landing");
+        LandingCHBOX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LandingCHBOXActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,35 +137,54 @@ public class SpaceApp extends javax.swing.JFrame {
                     .addComponent(VenusBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(EarthBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(98, 98, 98)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane2)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(255, 255, 255))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addGap(89, 89, 89))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(28, 28, 28)
-                    .addComponent(jLabel2)
-                    .addContainerGap(665, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LandingCHBOX)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(LowOrbitCHBOX)
+                                    .addContainerGap())
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(ReturnCHBOX)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3)
+                                    .addGap(89, 89, 89)))))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel2))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(ReturnCHBOX))
+                        .addGap(18, 18, 18)
+                        .addComponent(LowOrbitCHBOX)
+                        .addGap(18, 18, 18)
+                        .addComponent(LandingCHBOX)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
@@ -159,17 +207,25 @@ public class SpaceApp extends javax.swing.JFrame {
                         .addComponent(NeptuneBTN)
                         .addGap(18, 18, 18)
                         .addComponent(PlutoBTN))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 46, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(57, 57, 57)
-                    .addComponent(jLabel2)
-                    .addContainerGap(410, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MercuryBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MercuryBTNActionPerformed
+      SateliteBOX.clearSelection();
+     
+    }//GEN-LAST:event_MercuryBTNActionPerformed
+
+    private void LowOrbitCHBOXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LowOrbitCHBOXActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LowOrbitCHBOXActionPerformed
+
+    private void LandingCHBOXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LandingCHBOXActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LandingCHBOXActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,11 +265,15 @@ public class SpaceApp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton EarthBTN;
     private javax.swing.JRadioButton JupiterBTN;
+    private javax.swing.JCheckBox LandingCHBOX;
+    private javax.swing.JCheckBox LowOrbitCHBOX;
     private javax.swing.JRadioButton MarsBTN;
     private javax.swing.JRadioButton MercuryBTN;
     private javax.swing.JRadioButton NeptuneBTN;
     private javax.swing.JTextArea OutputTXTBOX;
     private javax.swing.JRadioButton PlutoBTN;
+    private javax.swing.JCheckBox ReturnCHBOX;
+    private javax.swing.JList<String> SateliteBOX;
     private javax.swing.JRadioButton SaturnBTN1;
     private javax.swing.JRadioButton UranusBTN;
     private javax.swing.JRadioButton VenusBTN;
@@ -221,7 +281,7 @@ public class SpaceApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
