@@ -12,19 +12,19 @@ import java.util.ArrayList;
  */
 public class Planet {
     private String Name;
-    private double Traveltime;
+    private double TravelTime;
     private double DeltaVCapture;
     private double DeltaVLowOrbit;
     private double DeltaVLanding;
-    private ArrayList<String> Sattelites = new ArrayList(); 
+    private ArrayList<Sattelites> Moons = new ArrayList(); 
     
-    public Planet(){
-    Name = "";
-    Traveltime = 0;
-    DeltaVCapture = 0;
-    DeltaVLowOrbit = 0;
-    DeltaVLanding = 0;   
-   
+    public Planet (String Name, double TravelTime, double DeltaVCapture, double DeltaVLowOrbit, double DeltaVLanding, ArrayList<Sattelites> Moons) {
+    this.Name = Name;
+    this.TravelTime = TravelTime;
+    this.DeltaVCapture = DeltaVCapture;
+    this.DeltaVLowOrbit = DeltaVLowOrbit;
+    this.DeltaVLanding = DeltaVLanding;
+    this.Moons = Moons;
 }
 
     public String getName() {
@@ -36,11 +36,11 @@ public class Planet {
     }
 
     public double getTraveltime() {
-        return Traveltime;
+        return TravelTime;
     }
 
     public void setTraveltime(double Traveltime) {
-        this.Traveltime = Traveltime;
+        this.TravelTime = Traveltime;
     }
 
     public double getDeltaVCapture() {
@@ -67,12 +67,12 @@ public class Planet {
         this.DeltaVLanding = DeltaVLanding;
     }
 
-    public ArrayList<String> getSattelites() {
-        return Sattelites;
+    public ArrayList<Sattelites> getSattelites() {
+        return Moons;
     }
 
-    public void setSattelites(ArrayList<String> Sattelites) {
-        this.Sattelites = Sattelites;
+    public void setSattelites(ArrayList<Sattelites> Sattelites) {
+        this.Moons = Sattelites;
     }
     
 }
