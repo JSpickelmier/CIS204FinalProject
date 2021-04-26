@@ -27,10 +27,17 @@ public class Planet {
     this.Moons = Moons;
 }
 
-    public Planet CostOfJourneyHighOrbit() {
-        
+    public double CostOfJourneyHighOrbit() {
+        return DeltaVCapture * 100000;
     }
     
+    public double CostOfJourneyLowOrbit() {
+        return DeltaVLowOrbit * 100000;
+    }
+    
+    public double CostOfJourneyLanding() {
+        return DeltaVLanding * 100000;
+    }
     
     public String getName() {
         return Name;
@@ -79,5 +86,11 @@ public class Planet {
     public void setSattelites(ArrayList<Sattelites> Sattelites) {
         this.Moons = Sattelites;
     }
+
+    @Override
+    public String toString() {
+        return "Planet{" + "Name=" + Name + ", TravelTime=" + TravelTime + ", DeltaVCapture=" + DeltaVCapture + ", DeltaVLowOrbit=" + DeltaVLowOrbit + ", DeltaVLanding=" + DeltaVLanding + ", Moons=" + Moons + '}';
+    }
+    
     
 }

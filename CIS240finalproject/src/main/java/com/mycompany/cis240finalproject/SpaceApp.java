@@ -6,7 +6,8 @@
 package com.mycompany.cis240finalproject;
 
 import java.util.ArrayList;
-
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 /**
  *
  * @author Jacks
@@ -36,7 +37,7 @@ public class SpaceApp extends javax.swing.JFrame {
         MarsBTN = new javax.swing.JRadioButton();
         JupiterBTN = new javax.swing.JRadioButton();
         UranusBTN = new javax.swing.JRadioButton();
-        SaturnBTN1 = new javax.swing.JRadioButton();
+        SaturnBTN = new javax.swing.JRadioButton();
         NeptuneBTN = new javax.swing.JRadioButton();
         PlutoBTN = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -64,26 +65,62 @@ public class SpaceApp extends javax.swing.JFrame {
         });
 
         VenusBTN.setText("Venus");
+        VenusBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VenusBTNActionPerformed(evt);
+            }
+        });
 
         EarthBTN.setText("Earth");
+        EarthBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EarthBTNActionPerformed(evt);
+            }
+        });
 
         MarsBTN.setText("Mars");
+        MarsBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MarsBTNActionPerformed(evt);
+            }
+        });
 
         JupiterBTN.setText("Jupiter");
+        JupiterBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JupiterBTNActionPerformed(evt);
+            }
+        });
 
         UranusBTN.setText("Uranus");
+        UranusBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UranusBTNActionPerformed(evt);
+            }
+        });
 
-        SaturnBTN1.setText("Saturn");
+        SaturnBTN.setText("Saturn");
+        SaturnBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaturnBTNActionPerformed(evt);
+            }
+        });
 
         NeptuneBTN.setText("Neptune");
+        NeptuneBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NeptuneBTNActionPerformed(evt);
+            }
+        });
 
         PlutoBTN.setText("Pluto");
-
-        SateliteBOX.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        PlutoBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlutoBTNActionPerformed(evt);
+            }
         });
+
+        SateliteBOX.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(SateliteBOX);
 
         jButton1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 22)); // NOI18N
@@ -118,6 +155,11 @@ public class SpaceApp extends javax.swing.JFrame {
         jLabel5.setText("Please select what type of trip your spacecraft will be undertaking.");
 
         ChkBoxLEO.setText("Spacecraft begins journey from low earth orbit.");
+        ChkBoxLEO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChkBoxLEOActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jLabel6.setText("*Disclaimer this is a theoretical senario* calculations for the estimated cost assume a payload of 1000kg using the efficency of most current cost effective launch system technology (Falcon Heavy)");
@@ -132,7 +174,7 @@ public class SpaceApp extends javax.swing.JFrame {
                     .addComponent(MarsBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JupiterBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(UranusBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SaturnBTN1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SaturnBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(NeptuneBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                     .addComponent(PlutoBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(MercuryBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,7 +248,7 @@ public class SpaceApp extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(JupiterBTN)
                                 .addGap(23, 23, 23)
-                                .addComponent(SaturnBTN1)
+                                .addComponent(SaturnBTN)
                                 .addGap(18, 18, 18)
                                 .addComponent(UranusBTN)
                                 .addGap(18, 18, 18)
@@ -223,16 +265,117 @@ public class SpaceApp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MercuryBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MercuryBTNActionPerformed
-      SateliteBOX.clearSelection();
-     
+      
+      VenusBTN.setSelected(false);
+      EarthBTN.setSelected(false);
+      MarsBTN.setSelected(false);
+      JupiterBTN.setSelected(false);
+      SaturnBTN.setSelected(false);
+      UranusBTN.setSelected(false);
+      NeptuneBTN.setSelected(false);
+      PlutoBTN.setSelected(false);
+    
     }//GEN-LAST:event_MercuryBTNActionPerformed
+
+    private void ChkBoxLEOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkBoxLEOActionPerformed
+      
+    }//GEN-LAST:event_ChkBoxLEOActionPerformed
+
+    private void VenusBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VenusBTNActionPerformed
+      MercuryBTN.setSelected(false);
+      EarthBTN.setSelected(false);
+      MarsBTN.setSelected(false);
+      JupiterBTN.setSelected(false);
+      SaturnBTN.setSelected(false);
+      UranusBTN.setSelected(false);
+      NeptuneBTN.setSelected(false);
+      PlutoBTN.setSelected(false);
+           
+    }//GEN-LAST:event_VenusBTNActionPerformed
+
+    private void EarthBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EarthBTNActionPerformed
+      MercuryBTN.setSelected(false);
+      VenusBTN.setSelected(false);
+      MarsBTN.setSelected(false);
+      JupiterBTN.setSelected(false);
+      SaturnBTN.setSelected(false);
+      UranusBTN.setSelected(false);
+      NeptuneBTN.setSelected(false);
+      PlutoBTN.setSelected(false);
+    }//GEN-LAST:event_EarthBTNActionPerformed
+
+    private void MarsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarsBTNActionPerformed
+      MercuryBTN.setSelected(false);
+      VenusBTN.setSelected(false);
+      EarthBTN.setSelected(false);
+      JupiterBTN.setSelected(false);
+      SaturnBTN.setSelected(false);
+      UranusBTN.setSelected(false);
+      NeptuneBTN.setSelected(false);
+      PlutoBTN.setSelected(false);  
+    }//GEN-LAST:event_MarsBTNActionPerformed
+
+    private void JupiterBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JupiterBTNActionPerformed
+      MercuryBTN.setSelected(false);
+      VenusBTN.setSelected(false);
+      EarthBTN.setSelected(false);
+      MarsBTN.setSelected(false);
+      SaturnBTN.setSelected(false);
+      UranusBTN.setSelected(false);
+      NeptuneBTN.setSelected(false);
+      PlutoBTN.setSelected(false);
+    }//GEN-LAST:event_JupiterBTNActionPerformed
+
+    private void SaturnBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaturnBTNActionPerformed
+      MercuryBTN.setSelected(false);
+      VenusBTN.setSelected(false);
+      EarthBTN.setSelected(false);
+      MarsBTN.setSelected(false);
+      JupiterBTN.setSelected(false);
+      UranusBTN.setSelected(false);
+      NeptuneBTN.setSelected(false);
+      PlutoBTN.setSelected(false);
+    }//GEN-LAST:event_SaturnBTNActionPerformed
+
+    private void UranusBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UranusBTNActionPerformed
+      MercuryBTN.setSelected(false);
+      VenusBTN.setSelected(false);
+      EarthBTN.setSelected(false);
+      MarsBTN.setSelected(false);
+      JupiterBTN.setSelected(false);
+      SaturnBTN.setSelected(false);
+      NeptuneBTN.setSelected(false);
+      PlutoBTN.setSelected(false);  
+    }//GEN-LAST:event_UranusBTNActionPerformed
+
+    private void NeptuneBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NeptuneBTNActionPerformed
+      MercuryBTN.setSelected(false);
+      VenusBTN.setSelected(false);
+      EarthBTN.setSelected(false);
+      MarsBTN.setSelected(false);
+      JupiterBTN.setSelected(false);
+      SaturnBTN.setSelected(false);
+      UranusBTN.setSelected(false);
+      PlutoBTN.setSelected(false);  
+    }//GEN-LAST:event_NeptuneBTNActionPerformed
+
+    private void PlutoBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlutoBTNActionPerformed
+      MercuryBTN.setSelected(false);
+      VenusBTN.setSelected(false);
+      EarthBTN.setSelected(false);
+      MarsBTN.setSelected(false);
+      JupiterBTN.setSelected(false);
+      SaturnBTN.setSelected(false);
+      UranusBTN.setSelected(false);
+      NeptuneBTN.setSelected(false);  
+    }//GEN-LAST:event_PlutoBTNActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
     
-    
+    //construct planets and moons
         ArrayList<Sattelites> MoonsofMercury = new ArrayList<>();
         Planet Mercury = new Planet ("Mercury", "3.5 months", 20.18, 21.4, 24.46, MoonsofMercury);
         
@@ -312,12 +455,48 @@ public class SpaceApp extends javax.swing.JFrame {
         Sattelites Charon = new Sattelites (Pluto, "Charon","45.5 years", 20.12, 20.28, 20.7);
         MoonsofPluto.add(Charon); 
          
+          
+      
+   
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SpaceApp().setVisible(true);
             }
         });
     }
+    
+      public double ReturnTripDeltaV(double DeltaV) {
+            return DeltaV * 2;
+        }
+        
+        
+         public double ReturnTripCost(double Cost) {
+            return Cost * 2;
+        }
+         
+        
+   
+
+             
+       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox ChkBoxLEO;
@@ -330,8 +509,8 @@ public class SpaceApp extends javax.swing.JFrame {
     private javax.swing.JRadioButton NeptuneBTN;
     private javax.swing.JTextArea OutputTXTBOX;
     private javax.swing.JRadioButton PlutoBTN;
-    private javax.swing.JList<String> SateliteBOX;
-    private javax.swing.JRadioButton SaturnBTN1;
+    public javax.swing.JList<String> SateliteBOX;
+    private javax.swing.JRadioButton SaturnBTN;
     private javax.swing.JRadioButton UranusBTN;
     private javax.swing.JRadioButton VenusBTN;
     private javax.swing.ButtonGroup buttonGroup1;

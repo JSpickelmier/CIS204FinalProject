@@ -28,6 +28,19 @@ public class Sattelites {
     this.DeltaVLanding = DeltaVLanding;
    }
 
+    public double CostOfJourneyHighOrbit() {
+        return DeltaVCapture * 100000;
+    }
+    
+    public double CostOfJourneyLowOrbit() {
+        return DeltaVLowOrbit * 100000;
+    }
+    
+    public double CostOfJourneyLanding() {
+        return DeltaVLanding * 100000;
+    }
+
+   
     public Planet getHomePlanet() {
         return HomePlanet;
     }
@@ -74,6 +87,11 @@ public class Sattelites {
 
     public void setDeltaVLanding(double DeltaVLanding) {
         this.DeltaVLanding = DeltaVLanding;
+    }
+
+    @Override
+    public String toString() {
+        return "Sattelites{" + "HomePlanet=" + HomePlanet + ", Name=" + Name + ", TravelTime=" + TravelTime + ", DeltaVCapture=" + DeltaVCapture + ", DeltaVLowOrbit=" + DeltaVLowOrbit + ", DeltaVLanding=" + DeltaVLanding + '}';
     }
    
    

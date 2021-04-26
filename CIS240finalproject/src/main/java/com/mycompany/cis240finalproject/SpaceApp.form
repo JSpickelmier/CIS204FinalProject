@@ -33,7 +33,7 @@
                   <Component id="MarsBTN" alignment="1" max="32767" attributes="0"/>
                   <Component id="JupiterBTN" alignment="0" max="32767" attributes="0"/>
                   <Component id="UranusBTN" alignment="0" max="32767" attributes="0"/>
-                  <Component id="SaturnBTN1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="SaturnBTN" alignment="0" max="32767" attributes="0"/>
                   <Component id="NeptuneBTN" alignment="0" pref="149" max="32767" attributes="0"/>
                   <Component id="PlutoBTN" alignment="0" max="32767" attributes="0"/>
                   <Component id="MercuryBTN" min="-2" pref="114" max="-2" attributes="0"/>
@@ -119,7 +119,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="JupiterBTN" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="SaturnBTN1" min="-2" max="-2" attributes="0"/>
+                              <Component id="SaturnBTN" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="UranusBTN" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -151,41 +151,65 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Venus"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VenusBTNActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="EarthBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="Earth"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EarthBTNActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="MarsBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="Mars"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MarsBTNActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="JupiterBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="Jupiter"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JupiterBTNActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="UranusBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="Uranus"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UranusBTNActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="SaturnBTN1">
+    <Component class="javax.swing.JRadioButton" name="SaturnBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="Saturn"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaturnBTNActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="NeptuneBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="Neptune"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NeptuneBTNActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="PlutoBTN">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pluto"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PlutoBTNActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -197,17 +221,13 @@
         <Component class="javax.swing.JList" name="SateliteBOX">
           <Properties>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-                <StringItem index="4" value="Item 5"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
+            <Property name="selectionMode" type="int" value="0"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -315,6 +335,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Spacecraft begins journey from low earth orbit."/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChkBoxLEOActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
