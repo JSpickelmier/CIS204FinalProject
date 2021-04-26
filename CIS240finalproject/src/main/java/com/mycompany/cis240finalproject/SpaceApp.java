@@ -261,9 +261,45 @@ public class SpaceApp extends javax.swing.JFrame {
         Planet Pluto = new Planet ("Pluto", "45.5 years", 20.06, 20.41, 21.3, MoonsofPluto);
         
         
+        Sattelites ISS = new Sattelites (Earth, "Low Earth Orbit (ISS)","20 minutes", 9, 9, 9 );
         
+        Sattelites Moon = new Sattelites (Earth, "Moon","2 days", 12.26, 12.94, 14.66 );
         
+        Sattelites Phobos = new Sattelites (Mars, "Phobos","8.5 months", 14.89, 14.893, 14.889 );
         
+        Sattelites Demios = new Sattelites (Mars, "Demios","8.5 months", 14.6, 14.602, 14.606 );
+        
+        Sattelites Europa = new Sattelites (Jupiter, "Europa","2.7 years", 24.47, 25.05, 26.49 );
+        
+        Sattelites Io = new Sattelites (Jupiter, "Io","2.7 years", 25.9, 26.63, 28.41 );
+        
+        Sattelites Ganymede = new Sattelites (Jupiter, "Ganymede","2.7 years", 22.28, 23.07, 25.02 );
+        
+        Sattelites Callisto = new Sattelites (Jupiter, "Callisto","2.7 years", 20.72, 21.42, 23.17 );
+        
+        Sattelites Titan = new Sattelites (Saturn, "Titan","6.0 years", 19.77, 20.43, 28.03 );
+        
+        Sattelites Enceladus = new Sattelites (Saturn, "Enceladus","6.0 years", 24.81, 24.88, 25.04 );
+        
+        Sattelites Rhea = new Sattelites (Saturn, "Rhea","6.0 years", 22.62, 22.8, 23.25 );
+        
+        Sattelites Dione = new Sattelites (Saturn, "Dione","6.0 years", 23.51, 23.65, 24.1 );
+        
+        Sattelites Tethys = new Sattelites (Saturn, "Tethys","6.0 years", 24.19, 24.3, 24.57);
+        
+        Sattelites Titania = new Sattelites (Uranus, "Titania","16.0 years", 19.88, 20.1, 20.66);
+        
+        Sattelites Miranda = new Sattelites (Uranus, "Miranda","16.0 years", 21.97, 22.02, 22.15);
+        
+        Sattelites Umbriel = new Sattelites (Uranus, "Umbriel","16.0 years", 20.7, 20.85, 21.22);
+        
+        Sattelites Ariel = new Sattelites (Uranus, "Ariel","16.0 years", 21.12, 21.28, 21.67);
+        
+        Sattelites Triton = new Sattelites (Neptune, "Triton","30.6 years", 20.1, 20.51, 21.56);
+        
+        Sattelites Charon = new Sattelites (Pluto, "Charon","45.5 years", 20.12, 20.28, 20.7);
+         
+         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SpaceApp().setVisible(true);
