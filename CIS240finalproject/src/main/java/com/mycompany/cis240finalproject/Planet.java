@@ -27,6 +27,9 @@ public class Planet {
     this.Moons = Moons;
 }
 
+    public planet CostOfJourney
+    
+    
     public String getName() {
         return Name;
     }
