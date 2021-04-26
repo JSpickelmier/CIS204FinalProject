@@ -27,7 +27,9 @@ public class Planet {
     this.Moons = Moons;
 }
 
-    public planet CostOfJourney
+    public Planet CostOfJourneyHighOrbit() {
+        
+    }
     
     
     public String getName() {
