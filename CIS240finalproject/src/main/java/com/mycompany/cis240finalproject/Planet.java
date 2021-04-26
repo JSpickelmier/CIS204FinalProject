@@ -12,13 +12,13 @@ import java.util.ArrayList;
  */
 public class Planet {
     private String Name;
-    private double TravelTime;
+    private String TravelTime;
     private double DeltaVCapture;
     private double DeltaVLowOrbit;
     private double DeltaVLanding;
     private ArrayList<Sattelites> Moons = new ArrayList(); 
     
-    public Planet (String Name, double TravelTime, double DeltaVCapture, double DeltaVLowOrbit, double DeltaVLanding, ArrayList<Sattelites> Moons) {
+    public Planet (String Name, String TravelTime, double DeltaVCapture, double DeltaVLowOrbit, double DeltaVLanding, ArrayList<Sattelites> Moons) {
     this.Name = Name;
     this.TravelTime = TravelTime;
     this.DeltaVCapture = DeltaVCapture;
@@ -35,11 +35,11 @@ public class Planet {
         this.Name = Name;
     }
 
-    public double getTraveltime() {
+    public String getTraveltime() {
         return TravelTime;
     }
 
-    public void setTraveltime(double Traveltime) {
+    public void setTraveltime(String Traveltime) {
         this.TravelTime = Traveltime;
     }
 

@@ -5,6 +5,8 @@
  */
 package com.mycompany.cis240finalproject;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jacks
@@ -231,30 +233,37 @@ public class SpaceApp extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SpaceApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SpaceApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SpaceApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SpaceApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+        ArrayList<Sattelites> MoonsofMercury = new ArrayList<>();
+        Planet Mercury = new Planet ("Mercury", "3.5 months", 20.18, 21.4, 24.46, MoonsofMercury);
+        
+        ArrayList<Sattelites> MoonsofVenus = new ArrayList<>();
+        Planet Venus = new Planet ("Venus", "4.8 months", 12.85, 15.79, 42.79, MoonsofVenus);
+        
+        ArrayList<Sattelites> MoonsofEarth = new ArrayList<>();
+        Planet Earth = new Planet ("Earth", "This is the start point", 0, 0, 0, MoonsofEarth);
+        
+        ArrayList<Sattelites> MoonsofMars = new ArrayList<>();
+        Planet Mars = new Planet ("Mars", "8.5 months", 13.61, 15.05, 18.65, MoonsofMars);
+        
+        ArrayList<Sattelites> MoonsofJupiter = new ArrayList<>();
+        Planet Jupiter = new Planet ("Jupiter", "2.7 years", 15.57, 32.78, 65.78, MoonsofJupiter);
+        
+        ArrayList<Sattelites> MoonsofSaturn = new ArrayList<>();
+        Planet Saturn = new Planet ("Saturn", "6.0 years", 16.71, 26.93, 45.93, MoonsofSaturn);
+        
+        ArrayList<Sattelites> MoonsofUranus = new ArrayList<>();
+        Planet Uranus = new Planet ("Uranus", "16.0 years", 17.49, 23.62, 38.62, MoonsofUranus);
+        
+        ArrayList<Sattelites> MoonsofNeptune = new ArrayList<>();
+        Planet Neptune = new Planet ("Neptune", "30.6 years", 17.6, 24.35, 40.35, MoonsofNeptune);
+        
+        ArrayList<Sattelites> MoonsofPluto = new ArrayList<>();
+        Planet Pluto = new Planet ("Pluto", "45.5 years", 20.06, 20.41, 21.3, MoonsofPluto);
+        
+        
+        
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SpaceApp().setVisible(true);

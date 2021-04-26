@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Sattelites extends Planet {
     private Planet HomePlanet;
     
-    public Sattelites (String Name, double Traveltime, double DeltaVCapture, double DeltaVLowOrbit, double DeltaVLanding, ArrayList<Sattelites> Moons) {
+    public Sattelites (String Name, String Traveltime, double DeltaVCapture, double DeltaVLowOrbit, double DeltaVLanding, ArrayList<Sattelites> Moons) {
         super(Name, Traveltime, DeltaVCapture, DeltaVLowOrbit, DeltaVLanding, Moons);
         this.HomePlanet = HomePlanet;
         
