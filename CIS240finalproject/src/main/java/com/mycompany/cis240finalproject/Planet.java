@@ -16,16 +16,26 @@ public class Planet {
     private double DeltaVCapture;
     private double DeltaVLowOrbit;
     private double DeltaVLanding;
+    private boolean IsGasGiant;
     private ArrayList<Sattelites> Moons = new ArrayList(); 
     
-    public Planet (String Name, String TravelTime, double DeltaVCapture, double DeltaVLowOrbit, double DeltaVLanding, ArrayList<Sattelites> Moons) {
+    public Planet (String Name, String TravelTime, double DeltaVCapture, double DeltaVLowOrbit, double DeltaVLanding, boolean IsGasGiant, ArrayList<Sattelites> Moons) {
     this.Name = Name;
     this.TravelTime = TravelTime;
     this.DeltaVCapture = DeltaVCapture;
     this.DeltaVLowOrbit = DeltaVLowOrbit;
     this.DeltaVLanding = DeltaVLanding;
+    this.IsGasGiant = IsGasGiant;
     this.Moons = Moons;
 }
+
+    public boolean isIsGasGiant() {
+        return IsGasGiant;
+    }
+
+    public void setIsGasGiant(boolean IsGasGiant) {
+        this.IsGasGiant = IsGasGiant;
+    }
 
     public double CostOfJourneyHighOrbit() {
         return DeltaVCapture * 100000;

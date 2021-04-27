@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 /**
  *
  * @author Jacks
@@ -423,6 +425,7 @@ public class SpaceApp extends javax.swing.JFrame {
         int Trip = TripType();
         boolean SatDest = SatDestination();
         boolean LEObool = LEO();
+        boolean landstopper = false;
         double MoneyCost;
         double DeltaVCost;
         MoneyCost = 0;
@@ -465,9 +468,12 @@ public class SpaceApp extends javax.swing.JFrame {
                 DeltaVCost = Plnt.getDeltaVLowOrbit();
                 break;
             case 2:
+                if (Plnt.isIsGasGiant() == true){
+                 landstopper = true;
+                } else{
                 MoneyCost = Plnt.CostOfJourneyLanding();
                 DeltaVCost = Plnt.getDeltaVLanding();
-                break;
+                break;}
             default:
                 break; }
         } 
@@ -486,16 +492,21 @@ public class SpaceApp extends javax.swing.JFrame {
                 break;
         }
       if (LEObool == true){
-          DeltaVCost = DeltaVCost - 9;  }
+          DeltaVCost = DeltaVCost - 9;
+          MoneyCost = MoneyCost - 900000;
+      }
           
    
 
    String FinalCost = CostFormatter(MoneyCost);
        
   
-          
+         if (landstopper == true){ OutputTXTBOX.append("You may not attempt a landing on a gas giant planet!");}
+         else{
        OutputTXTBOX.append("The cost of your voyage is " + "$" +  FinalCost + " of rocket fuel, " + "\n" + DeltaVCost + " Km/s of Delta V, " + "\n" + "and will take aproximantely  "  + Time + " to complete");
+         }
        //"The cost of your voyage is " + "$" +  FormatedCost + " of rocket fuel, " + "\n" + DeltaVCost + " Km/s of Delta V, " + "\n" + "and will take aproximantely  "  + Time + " to complete"
+       
        
     }//GEN-LAST:event_CalculateBTNActionPerformed
 
@@ -506,31 +517,31 @@ public class SpaceApp extends javax.swing.JFrame {
     
     //construct planets and moons
         ArrayList<Sattelites> MoonsofMercury = new ArrayList<>();
-        Planet Mercury = new Planet ("Mercury", "3.5 months", 20.18, 21.4, 24.46, MoonsofMercury);
+        Planet Mercury = new Planet ("Mercury", "3.5 months", 20.18, 21.4, 24.46,false, MoonsofMercury);
         
         ArrayList<Sattelites> MoonsofVenus = new ArrayList<>();
-        Planet Venus = new Planet ("Venus", "4.8 months", 12.85, 15.79, 42.79, MoonsofVenus);
+        Planet Venus = new Planet ("Venus", "4.8 months", 12.85, 15.79, 42.79, false,  MoonsofVenus);
         
         ArrayList<Sattelites> MoonsofEarth = new ArrayList<>();
-        Planet Earth = new Planet ("Earth", "This is the start point", 0, 0, 0, MoonsofEarth);
+        Planet Earth = new Planet ("Earth", "This is the start point", 0, 0, 0, false,  MoonsofEarth);
         
         ArrayList<Sattelites> MoonsofMars = new ArrayList<>();
-        Planet Mars = new Planet ("Mars", "8.5 months", 13.61, 15.05, 18.65, MoonsofMars);
+        Planet Mars = new Planet ("Mars", "8.5 months", 13.61, 15.05, 18.65, false, MoonsofMars);
         
         ArrayList<Sattelites> MoonsofJupiter = new ArrayList<>();
-        Planet Jupiter = new Planet ("Jupiter", "2.7 years", 15.57, 32.78, 65.78, MoonsofJupiter);
+        Planet Jupiter = new Planet ("Jupiter", "2.7 years", 15.57, 32.78, 65.78, true,  MoonsofJupiter);
         
         ArrayList<Sattelites> MoonsofSaturn = new ArrayList<>();
-        Planet Saturn = new Planet ("Saturn", "6.0 years", 16.71, 26.93, 45.93, MoonsofSaturn);
+        Planet Saturn = new Planet ("Saturn", "6.0 years", 16.71, 26.93, 45.93, true, MoonsofSaturn);
         
         ArrayList<Sattelites> MoonsofUranus = new ArrayList<>();
-        Planet Uranus = new Planet ("Uranus", "16.0 years", 17.49, 23.62, 38.62, MoonsofUranus);
+        Planet Uranus = new Planet ("Uranus", "16.0 years", 17.49, 23.62, 38.62, true, MoonsofUranus);
         
         ArrayList<Sattelites> MoonsofNeptune = new ArrayList<>();
-        Planet Neptune = new Planet ("Neptune", "30.6 years", 17.6, 24.35, 40.35, MoonsofNeptune);
+        Planet Neptune = new Planet ("Neptune", "30.6 years", 17.6, 24.35, 40.35,true,  MoonsofNeptune);
         
         ArrayList<Sattelites> MoonsofPluto = new ArrayList<>();
-        Planet Pluto = new Planet ("Pluto", "45.5 years", 20.06, 20.41, 21.3, MoonsofPluto);
+        Planet Pluto = new Planet ("Pluto", "45.5 years", 20.06, 20.41, 21.3, false, MoonsofPluto);
         
         //Earth
         Sattelites ISS = new Sattelites (Earth, "International Space Station","20 minutes", 9, 9, 9 );
@@ -643,19 +654,19 @@ public class SpaceApp extends javax.swing.JFrame {
     //Planet Getters    
         public Planet MercuryGet(){
              ArrayList<Sattelites> MoonsofMercury = new ArrayList<>();
-             Planet Mercury = new Planet ("Mercury", "3.5 months", 20.18, 21.4, 24.46, MoonsofMercury);
+             Planet Mercury = new Planet ("Mercury", "3.5 months", 20.18, 21.4, 24.46, false, MoonsofMercury);
              return Mercury;
         }
                
         public Planet VenusGet(){
             ArrayList<Sattelites> MoonsofVenus = new ArrayList<>();
-        Planet Venus = new Planet ("Venus", "4.8 months", 12.85, 15.79, 42.79, MoonsofVenus);
+        Planet Venus = new Planet ("Venus", "4.8 months", 12.85, 15.79, 42.79, false, MoonsofVenus);
         return Venus;
         }
         
         public Planet EarthGet(){
             ArrayList<Sattelites> MoonsofEarth = new ArrayList<>();
-        Planet Earth = new Planet ("Earth", "This is the start point", 0, 0, 0, MoonsofEarth);
+        Planet Earth = new Planet ("Earth", "This is the start point", 0, 0, 0, false, MoonsofEarth);
         Sattelites ISS = new Sattelites (Earth, "International Space Station","20 minutes", 9, 9, 9 );
         Sattelites Moon = new Sattelites (Earth, "Moon","2 days", 12.26, 12.94, 14.66 );
         MoonsofEarth.add(ISS);
@@ -666,7 +677,7 @@ public class SpaceApp extends javax.swing.JFrame {
         
         public Planet MarsGet(){
            ArrayList<Sattelites> MoonsofMars = new ArrayList<>();
-        Planet Mars = new Planet ("Mars", "8.5 months", 13.61, 15.05, 18.65, MoonsofMars);
+        Planet Mars = new Planet ("Mars", "8.5 months", 13.61, 15.05, 18.65, false, MoonsofMars);
          Sattelites Phobos = new Sattelites (Mars, "Phobos","8.5 months", 14.89, 14.893, 14.889 );
         Sattelites Demios = new Sattelites (Mars, "Demios","8.5 months", 14.6, 14.602, 14.606 );
         MoonsofMars.add(Phobos);
@@ -676,7 +687,7 @@ public class SpaceApp extends javax.swing.JFrame {
         
         public Planet JupiterGet(){
           ArrayList<Sattelites> MoonsofJupiter = new ArrayList<>();
-        Planet Jupiter = new Planet ("Jupiter", "2.7 years", 15.57, 32.78, 65.78, MoonsofJupiter);
+        Planet Jupiter = new Planet ("Jupiter", "2.7 years", 15.57, 32.78, 65.78, true, MoonsofJupiter);
         Sattelites Europa = new Sattelites (Jupiter, "Europa","2.7 years", 24.47, 25.05, 26.49 );
         Sattelites Io = new Sattelites (Jupiter, "Io","2.7 years", 25.9, 26.63, 28.41 );       
         Sattelites Ganymede = new Sattelites (Jupiter, "Ganymede","2.7 years", 22.28, 23.07, 25.02 );       
@@ -690,7 +701,7 @@ public class SpaceApp extends javax.swing.JFrame {
         
         public Planet SaturnGet (){
           ArrayList<Sattelites> MoonsofSaturn = new ArrayList<>();
-        Planet Saturn = new Planet ("Saturn", "6.0 years", 16.71, 26.93, 45.93, MoonsofSaturn);
+        Planet Saturn = new Planet ("Saturn", "6.0 years", 16.71, 26.93, 45.93, true, MoonsofSaturn);
         Sattelites Titan = new Sattelites (Saturn, "Titan","6.0 years", 19.77, 20.43, 28.03 );       
         Sattelites Enceladus = new Sattelites (Saturn, "Enceladus","6.0 years", 24.81, 24.88, 25.04 );       
         Sattelites Rhea = new Sattelites (Saturn, "Rhea","6.0 years", 22.62, 22.8, 23.25 );        
@@ -706,7 +717,7 @@ public class SpaceApp extends javax.swing.JFrame {
 
         public Planet UranusGet (){
           ArrayList<Sattelites> MoonsofUranus = new ArrayList<>();
-        Planet Uranus = new Planet ("Uranus", "16.0 years", 17.49, 23.62, 38.62, MoonsofUranus);
+        Planet Uranus = new Planet ("Uranus", "16.0 years", 17.49, 23.62, 38.62, true, MoonsofUranus);
         Sattelites Titania = new Sattelites (Uranus, "Titania","16.0 years", 19.88, 20.1, 20.66);        
         Sattelites Miranda = new Sattelites (Uranus, "Miranda","16.0 years", 21.97, 22.02, 22.15);       
         Sattelites Umbriel = new Sattelites (Uranus, "Umbriel","16.0 years", 20.7, 20.85, 21.22);       
@@ -720,7 +731,7 @@ public class SpaceApp extends javax.swing.JFrame {
         
         public Planet NeptuneGet (){
           ArrayList<Sattelites> MoonsofNeptune = new ArrayList<>();
-        Planet Neptune = new Planet ("Neptune", "30.6 years", 17.6, 24.35, 40.35, MoonsofNeptune);
+        Planet Neptune = new Planet ("Neptune", "30.6 years", 17.6, 24.35, 40.35, true, MoonsofNeptune);
          Sattelites Triton = new Sattelites (Neptune, "Triton","30.6 years", 20.1, 20.51, 21.56);
         MoonsofNeptune.add(Triton);
         return Neptune;
@@ -728,7 +739,7 @@ public class SpaceApp extends javax.swing.JFrame {
         
         public Planet PlutoGet (){
            ArrayList<Sattelites> MoonsofPluto = new ArrayList<>();
-        Planet Pluto = new Planet ("Pluto", "45.5 years", 20.06, 20.41, 21.3, MoonsofPluto);
+        Planet Pluto = new Planet ("Pluto", "45.5 years", 20.06, 20.41, 21.3, false, MoonsofPluto);
         Sattelites Charon = new Sattelites (Pluto, "Charon","45.5 years", 20.12, 20.28, 20.7);
         MoonsofPluto.add(Charon); 
         return Pluto;
@@ -738,7 +749,7 @@ public class SpaceApp extends javax.swing.JFrame {
         
         public Planet PlanetReturn () {
             ArrayList<Sattelites> Blanklist = new ArrayList<>();
-            Planet Planetreturn = new Planet ("Name", "TravelTime", 0, 0, 0, Blanklist); 
+            Planet Planetreturn = new Planet ("Name", "TravelTime", 0, 0, 0, false, Blanklist); 
             if (MercuryBTN.isSelected()){
             Planetreturn = MercuryGet();}
             else if (VenusBTN.isSelected()){
