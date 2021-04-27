@@ -145,6 +145,7 @@ public class SpaceApp extends javax.swing.JFrame {
         OutputTXTBOX.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         OutputTXTBOX.setRows(5);
         OutputTXTBOX.setText("...");
+        OutputTXTBOX.setWrapStyleWord(true);
         jScrollPane2.setViewportView(OutputTXTBOX);
 
         jLabel3.setText("jLabel3");
@@ -406,7 +407,52 @@ public class SpaceApp extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboBoxTripOptionsActionPerformed
 
     private void CalculateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateBTNActionPerformed
+        OutputTXTBOX.setText("");
+        Planet Plnt = PlanetReturn();
+        String Time = Plnt.getTraveltime();
+        int DestinationType = Destination();
+        int Trip = TripType();
+        boolean LEObool = LEO();
+        double MoneyCost;
+        double DeltaVCost;
+        MoneyCost = 0;
+        DeltaVCost = 0;        
         
+        
+        
+        switch (DestinationType) {
+            case 0:
+                MoneyCost = Plnt.CostOfJourneyHighOrbit();
+                DeltaVCost = Plnt.getDeltaVCapture();
+                break;
+            case 1:
+                MoneyCost = Plnt.CostOfJourneyLowOrbit();
+                DeltaVCost = Plnt.getDeltaVLowOrbit();
+                break;
+            case 2:
+                MoneyCost = Plnt.CostOfJourneyLanding();
+                DeltaVCost = Plnt.getDeltaVLanding();
+                break;
+            default:
+                break;
+        }
+        
+        switch (Trip) {
+            case 0:
+               
+                break;
+            case 1:
+                MoneyCost = ReturnTripCost(MoneyCost);
+                DeltaVCost = ReturnTripDeltaV(DeltaVCost);
+                break;
+            default:
+                break;
+        }
+      if (LEObool == true){
+          DeltaVCost = DeltaVCost - 9;  
+        }  
+       OutputTXTBOX.append("The cost of your voyage is " + "$" + MoneyCost + " of rocket fuel, " + DeltaVCost + " Km/s of Delta V, and will take aproximantely  " + Time + " to complete" );
+       
     }//GEN-LAST:event_CalculateBTNActionPerformed
 
     /**
