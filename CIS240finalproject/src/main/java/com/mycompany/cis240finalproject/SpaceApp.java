@@ -302,7 +302,7 @@ public class SpaceApp extends javax.swing.JFrame {
       UranusBTN.setSelected(false);
       NeptuneBTN.setSelected(false);
       PlutoBTN.setSelected(false);
-    
+      MercuryFiller();
     }//GEN-LAST:event_MercuryBTNActionPerformed
 
     private void ChkBoxLEOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkBoxLEOActionPerformed
@@ -318,6 +318,7 @@ public class SpaceApp extends javax.swing.JFrame {
       UranusBTN.setSelected(false);
       NeptuneBTN.setSelected(false);
       PlutoBTN.setSelected(false);
+      VenusFiller();
            
     }//GEN-LAST:event_VenusBTNActionPerformed
 
@@ -330,6 +331,7 @@ public class SpaceApp extends javax.swing.JFrame {
       UranusBTN.setSelected(false);
       NeptuneBTN.setSelected(false);
       PlutoBTN.setSelected(false);
+      EarthFiller();
     }//GEN-LAST:event_EarthBTNActionPerformed
 
     private void MarsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarsBTNActionPerformed
@@ -611,6 +613,11 @@ public class SpaceApp extends javax.swing.JFrame {
         public Planet EarthGet(){
             ArrayList<Sattelites> MoonsofEarth = new ArrayList<>();
         Planet Earth = new Planet ("Earth", "This is the start point", 0, 0, 0, MoonsofEarth);
+        Sattelites ISS = new Sattelites (Earth, "International Space Station","20 minutes", 9, 9, 9 );
+        Sattelites Moon = new Sattelites (Earth, "Moon","2 days", 12.26, 12.94, 14.66 );
+        MoonsofEarth.add(ISS);
+        MoonsofEarth.add(Moon);
+        
         return Earth;
         }
         
@@ -681,24 +688,152 @@ public class SpaceApp extends javax.swing.JFrame {
         
         
         public ArrayList MoonNames(Planet inputplnt){
-             ArrayList<Sattelites> MoonList = new ArrayList<>();
-             ArrayList<String> NameList = new ArrayList<>();
-             MoonList = inputplnt.getSattelites();
-               for (int i = 0; i < MoonList.(); i++) {
             
+             
+             Sattelites SatInput = new Sattelites(inputplnt, "Name", "NA", 0, 0, 0 );
+             ArrayList<Sattelites> MoonList = inputplnt.getSattelites();
+             ArrayList<String> NameList = new ArrayList<>();
+             
+               for (int index = 0; index < MoonList.size(); index++){
+               SatInput = MoonList.get(index);
+               NameList.add(index,SatInput.getName() );
         }
-             
-             
+             return NameList;
         }
         
         
-        public void MercuryFiller()
+       public void MercuryFiller() {
+         Planet Mercury = MercuryGet();
+         ArrayList<String> MoonList = MoonNames(Mercury);
+        
          if (MercuryBTN.isSelected()){
             SateliteBOX.clearSelection();
-            SateliteBOX.
-        }
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         }
                 
-   
+       public void VenusFiller() {
+         Planet Venus = VenusGet();
+         ArrayList<String> MoonList = MoonNames(Venus);
+        
+         if (VenusBTN.isSelected()){
+            SateliteBOX.clearSelection();
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         }
+       
+       public void EarthFiller() {
+            Planet Earth = EarthGet();
+         ArrayList<String> MoonList = MoonNames(Earth);
+
+         if (EarthBTN.isSelected()){
+            SateliteBOX.clearSelection();
+         
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         }
+        
+         public void MarsFiller() {
+            Planet Mars = MarsGet();
+         ArrayList<String> MoonList = MoonNames(Mars);
+
+         if (EarthBTN.isSelected()){
+            SateliteBOX.clearSelection();
+         
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         }
+         
+          public void JupiterFiller() {
+            Planet Jupiter = JupiterGet();
+         ArrayList<String> MoonList = MoonNames(Jupiter);
+
+         if (EarthBTN.isSelected()){
+            SateliteBOX.clearSelection();
+         
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         }
+          
+            public void SaturnFiller() {
+            Planet Saturn = SaturnGet();
+         ArrayList<String> MoonList = MoonNames(Saturn);
+
+         if (EarthBTN.isSelected()){
+            SateliteBOX.clearSelection();
+         
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         }
+            
+          public void UranusFiller() {
+            Planet Uranus = UranusGet();
+         ArrayList<String> MoonList = MoonNames(Uranus);
+
+         if (EarthBTN.isSelected()){
+            SateliteBOX.clearSelection();
+         
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         }
+          
+          public void NeptuneFiller() {
+            Planet Neptune = NeptuneGet();
+         ArrayList<String> MoonList = MoonNames(Neptune);
+
+         if (EarthBTN.isSelected()){
+            SateliteBOX.clearSelection();
+         
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         } 
+          
+         public void PlutoFiller() {
+            Planet Pluto = PlutoGet();
+         ArrayList<String> MoonList = MoonNames(Pluto);
+
+         if (EarthBTN.isSelected()){
+            SateliteBOX.clearSelection();
+         
+            DefaultListModel listModel = new DefaultListModel();
+         for (int i = 0; i < MoonList.size(); i++)
+         {
+         listModel.addElement(MoonList.get(i));
+         }
+         SateliteBOX.setModel(listModel); }  
+         }  
 
              
        
