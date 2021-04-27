@@ -495,12 +495,13 @@ public class SpaceApp extends javax.swing.JFrame {
           DeltaVCost = DeltaVCost - 9;
           MoneyCost = MoneyCost - 900000;
       }
-          
-   
-
+      
    String FinalCost = CostFormatter(MoneyCost);
-       
-  
+   
+         if (Plnt.getName().equals("Earth") && SatDest == false ) {
+             OutputTXTBOX.append("Earth is your start location. " + "\n" + "Please select a satellite or another planet.");
+         }
+         else
          if (landstopper == true){ OutputTXTBOX.append("You may not attempt a landing on a gas giant planet!");}
          else{
        OutputTXTBOX.append("The cost of your voyage is " + "$" +  FinalCost + " of rocket fuel, " + "\n" + DeltaVCost + " Km/s of Delta V, " + "\n" + "and will take aproximantely  "  + Time + " to complete");
