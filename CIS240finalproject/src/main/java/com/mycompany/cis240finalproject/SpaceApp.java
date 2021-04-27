@@ -5,7 +5,10 @@
  */
 package com.mycompany.cis240finalproject;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 /**
@@ -483,12 +486,16 @@ public class SpaceApp extends javax.swing.JFrame {
                 break;
         }
       if (LEObool == true){
-          DeltaVCost = DeltaVCost - 9;  
+          DeltaVCost = DeltaVCost - 9;  }
           
+   
+
+   String FinalCost = CostFormatter(MoneyCost);
        
   
-        }  
-       OutputTXTBOX.append("The cost of your voyage is " + "$" +  MoneyCost + " of rocket fuel, " + "\n" + DeltaVCost + " Km/s of Delta V, " + "\n" + "and will take aproximantely  "  + Time + " to complete" );
+          
+       OutputTXTBOX.append("The cost of your voyage is " + "$" +  FinalCost + " of rocket fuel, " + "\n" + DeltaVCost + " Km/s of Delta V, " + "\n" + "and will take aproximantely  "  + Time + " to complete");
+       //"The cost of your voyage is " + "$" +  FormatedCost + " of rocket fuel, " + "\n" + DeltaVCost + " Km/s of Delta V, " + "\n" + "and will take aproximantely  "  + Time + " to complete"
        
     }//GEN-LAST:event_CalculateBTNActionPerformed
 
@@ -937,6 +944,14 @@ public class SpaceApp extends javax.swing.JFrame {
            return ReturnS;
            
        }
+       
+       public String CostFormatter(Double input){
+        String FormatedCost = new DecimalFormat("#,###.00").format(input);
+        return FormatedCost;
+       }
+       
+       
+       
        
 
              
