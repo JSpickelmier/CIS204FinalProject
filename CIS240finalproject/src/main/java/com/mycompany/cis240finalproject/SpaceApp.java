@@ -475,6 +475,7 @@ public class SpaceApp extends javax.swing.JFrame {
                
                 break;
             case 1:
+                Time = TwoWayTravelTime(Time);
                 MoneyCost = ReturnTripCost(MoneyCost);
                 DeltaVCost = ReturnTripDeltaV(DeltaVCost);
                 break;
@@ -925,7 +926,16 @@ public class SpaceApp extends javax.swing.JFrame {
        }
        
        public String TwoWayTravelTime(String Time){
-           Double Time2 = Double.parseDouble(Time);
+           
+           String[] splited = Time.split("\\s+");
+           String units = splited[1];
+           Double Time2 = 0.0;
+           Time2 = Double.parseDouble(splited[0]);
+           double Timef = Time2 * 2;
+           String TimeS = String.valueOf(Timef);
+           String ReturnS = (TimeS + " " + units);
+           return ReturnS;
+           
        }
        
 
