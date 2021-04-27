@@ -342,7 +342,8 @@ public class SpaceApp extends javax.swing.JFrame {
       SaturnBTN.setSelected(false);
       UranusBTN.setSelected(false);
       NeptuneBTN.setSelected(false);
-      PlutoBTN.setSelected(false);  
+      PlutoBTN.setSelected(false); 
+      MarsFiller();
     }//GEN-LAST:event_MarsBTNActionPerformed
 
     private void JupiterBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JupiterBTNActionPerformed
@@ -354,6 +355,7 @@ public class SpaceApp extends javax.swing.JFrame {
       UranusBTN.setSelected(false);
       NeptuneBTN.setSelected(false);
       PlutoBTN.setSelected(false);
+      JupiterFiller();
     }//GEN-LAST:event_JupiterBTNActionPerformed
 
     private void SaturnBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaturnBTNActionPerformed
@@ -365,6 +367,7 @@ public class SpaceApp extends javax.swing.JFrame {
       UranusBTN.setSelected(false);
       NeptuneBTN.setSelected(false);
       PlutoBTN.setSelected(false);
+      SaturnFiller();
     }//GEN-LAST:event_SaturnBTNActionPerformed
 
     private void UranusBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UranusBTNActionPerformed
@@ -375,7 +378,8 @@ public class SpaceApp extends javax.swing.JFrame {
       JupiterBTN.setSelected(false);
       SaturnBTN.setSelected(false);
       NeptuneBTN.setSelected(false);
-      PlutoBTN.setSelected(false);  
+      PlutoBTN.setSelected(false); 
+      UranusFiller();
     }//GEN-LAST:event_UranusBTNActionPerformed
 
     private void NeptuneBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NeptuneBTNActionPerformed
@@ -387,6 +391,7 @@ public class SpaceApp extends javax.swing.JFrame {
       SaturnBTN.setSelected(false);
       UranusBTN.setSelected(false);
       PlutoBTN.setSelected(false);  
+      NeptuneFiller();
     }//GEN-LAST:event_NeptuneBTNActionPerformed
 
     private void PlutoBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlutoBTNActionPerformed
@@ -398,6 +403,7 @@ public class SpaceApp extends javax.swing.JFrame {
       SaturnBTN.setSelected(false);
       UranusBTN.setSelected(false);
       NeptuneBTN.setSelected(false);  
+      PlutoFiller();
     }//GEN-LAST:event_PlutoBTNActionPerformed
 
     private void ComboBoxTripOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxTripOptionsActionPerformed
@@ -407,9 +413,12 @@ public class SpaceApp extends javax.swing.JFrame {
     private void CalculateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateBTNActionPerformed
         OutputTXTBOX.setText("");
         Planet Plnt = PlanetReturn();
-        String Time = Plnt.getTraveltime();
+        String Time;
+        
+       
         int DestinationType = Destination();
         int Trip = TripType();
+        boolean SatDest = SatDestination();
         boolean LEObool = LEO();
         double MoneyCost;
         double DeltaVCost;
@@ -418,6 +427,31 @@ public class SpaceApp extends javax.swing.JFrame {
         
         
         
+        
+        
+        
+        
+        if (SatDest == true){
+            int SatSelect = SatBOXRtrn();
+            Sattelites Satl = SatelittesRtrn(Plnt, SatSelect);
+            Time = Satl.getTravelTime();
+            switch (DestinationType) {
+            case 0:
+                MoneyCost = Satl.CostOfJourneyHighOrbit();
+                DeltaVCost = Satl.getDeltaVCapture();
+                break;
+            case 1:
+                MoneyCost = Satl.CostOfJourneyLowOrbit();
+                DeltaVCost = Satl.getDeltaVLowOrbit();
+                break;
+            case 2:
+                MoneyCost = Satl.CostOfJourneyLanding();
+                DeltaVCost = Satl.getDeltaVLanding();
+                break;
+            default:
+                break;}}
+        else  {
+            Time = Plnt.getTraveltime();
         switch (DestinationType) {
             case 0:
                 MoneyCost = Plnt.CostOfJourneyHighOrbit();
@@ -432,8 +466,9 @@ public class SpaceApp extends javax.swing.JFrame {
                 DeltaVCost = Plnt.getDeltaVLanding();
                 break;
             default:
-                break;
-        }
+                break; }
+        } 
+        
         
         switch (Trip) {
             case 0:
@@ -624,36 +659,70 @@ public class SpaceApp extends javax.swing.JFrame {
         public Planet MarsGet(){
            ArrayList<Sattelites> MoonsofMars = new ArrayList<>();
         Planet Mars = new Planet ("Mars", "8.5 months", 13.61, 15.05, 18.65, MoonsofMars);
+         Sattelites Phobos = new Sattelites (Mars, "Phobos","8.5 months", 14.89, 14.893, 14.889 );
+        Sattelites Demios = new Sattelites (Mars, "Demios","8.5 months", 14.6, 14.602, 14.606 );
+        MoonsofMars.add(Phobos);
+        MoonsofMars.add(Demios);
         return Mars;
         }
         
         public Planet JupiterGet(){
           ArrayList<Sattelites> MoonsofJupiter = new ArrayList<>();
         Planet Jupiter = new Planet ("Jupiter", "2.7 years", 15.57, 32.78, 65.78, MoonsofJupiter);
+        Sattelites Europa = new Sattelites (Jupiter, "Europa","2.7 years", 24.47, 25.05, 26.49 );
+        Sattelites Io = new Sattelites (Jupiter, "Io","2.7 years", 25.9, 26.63, 28.41 );       
+        Sattelites Ganymede = new Sattelites (Jupiter, "Ganymede","2.7 years", 22.28, 23.07, 25.02 );       
+        Sattelites Callisto = new Sattelites (Jupiter, "Callisto","2.7 years", 20.72, 21.42, 23.17 );
+        MoonsofJupiter.add(Europa);
+        MoonsofJupiter.add(Io);
+        MoonsofJupiter.add(Ganymede);
+        MoonsofJupiter.add(Callisto);
         return Jupiter;
         }
         
         public Planet SaturnGet (){
           ArrayList<Sattelites> MoonsofSaturn = new ArrayList<>();
         Planet Saturn = new Planet ("Saturn", "6.0 years", 16.71, 26.93, 45.93, MoonsofSaturn);
+        Sattelites Titan = new Sattelites (Saturn, "Titan","6.0 years", 19.77, 20.43, 28.03 );       
+        Sattelites Enceladus = new Sattelites (Saturn, "Enceladus","6.0 years", 24.81, 24.88, 25.04 );       
+        Sattelites Rhea = new Sattelites (Saturn, "Rhea","6.0 years", 22.62, 22.8, 23.25 );        
+        Sattelites Dione = new Sattelites (Saturn, "Dione","6.0 years", 23.51, 23.65, 24.1 );       
+        Sattelites Tethys = new Sattelites (Saturn, "Tethys","6.0 years", 24.19, 24.3, 24.57);
+        MoonsofSaturn.add(Titan);
+        MoonsofSaturn.add(Enceladus);
+        MoonsofSaturn.add(Rhea);
+        MoonsofSaturn.add(Dione);
+        MoonsofSaturn.add(Tethys);
         return Saturn;
         }
 
-         public Planet UranusGet (){
+        public Planet UranusGet (){
           ArrayList<Sattelites> MoonsofUranus = new ArrayList<>();
         Planet Uranus = new Planet ("Uranus", "16.0 years", 17.49, 23.62, 38.62, MoonsofUranus);
+        Sattelites Titania = new Sattelites (Uranus, "Titania","16.0 years", 19.88, 20.1, 20.66);        
+        Sattelites Miranda = new Sattelites (Uranus, "Miranda","16.0 years", 21.97, 22.02, 22.15);       
+        Sattelites Umbriel = new Sattelites (Uranus, "Umbriel","16.0 years", 20.7, 20.85, 21.22);       
+        Sattelites Ariel = new Sattelites (Uranus, "Ariel","16.0 years", 21.12, 21.28, 21.67);  
+        MoonsofUranus.add(Titania);
+        MoonsofUranus.add(Miranda);
+        MoonsofUranus.add(Umbriel);
+        MoonsofUranus.add(Ariel);
         return Uranus;
         }
         
-         public Planet NeptuneGet (){
+        public Planet NeptuneGet (){
           ArrayList<Sattelites> MoonsofNeptune = new ArrayList<>();
         Planet Neptune = new Planet ("Neptune", "30.6 years", 17.6, 24.35, 40.35, MoonsofNeptune);
+         Sattelites Triton = new Sattelites (Neptune, "Triton","30.6 years", 20.1, 20.51, 21.56);
+        MoonsofNeptune.add(Triton);
         return Neptune;
         }
         
         public Planet PlutoGet (){
            ArrayList<Sattelites> MoonsofPluto = new ArrayList<>();
         Planet Pluto = new Planet ("Pluto", "45.5 years", 20.06, 20.41, 21.3, MoonsofPluto);
+        Sattelites Charon = new Sattelites (Pluto, "Charon","45.5 years", 20.12, 20.28, 20.7);
+        MoonsofPluto.add(Charon); 
         return Pluto;
         }
          
@@ -701,7 +770,7 @@ public class SpaceApp extends javax.swing.JFrame {
              return NameList;
         }
         
-        
+        //Satellite box fillers
        public void MercuryFiller() {
          Planet Mercury = MercuryGet();
          ArrayList<String> MoonList = MoonNames(Mercury);
@@ -745,11 +814,11 @@ public class SpaceApp extends javax.swing.JFrame {
          SateliteBOX.setModel(listModel); }  
          }
         
-         public void MarsFiller() {
+       public void MarsFiller() {
             Planet Mars = MarsGet();
          ArrayList<String> MoonList = MoonNames(Mars);
 
-         if (EarthBTN.isSelected()){
+         if (MarsBTN.isSelected()){
             SateliteBOX.clearSelection();
          
             DefaultListModel listModel = new DefaultListModel();
@@ -760,11 +829,11 @@ public class SpaceApp extends javax.swing.JFrame {
          SateliteBOX.setModel(listModel); }  
          }
          
-          public void JupiterFiller() {
+       public void JupiterFiller() {
             Planet Jupiter = JupiterGet();
          ArrayList<String> MoonList = MoonNames(Jupiter);
 
-         if (EarthBTN.isSelected()){
+         if (JupiterBTN.isSelected()){
             SateliteBOX.clearSelection();
          
             DefaultListModel listModel = new DefaultListModel();
@@ -775,11 +844,11 @@ public class SpaceApp extends javax.swing.JFrame {
          SateliteBOX.setModel(listModel); }  
          }
           
-            public void SaturnFiller() {
+       public void SaturnFiller() {
             Planet Saturn = SaturnGet();
          ArrayList<String> MoonList = MoonNames(Saturn);
 
-         if (EarthBTN.isSelected()){
+         if (SaturnBTN.isSelected()){
             SateliteBOX.clearSelection();
          
             DefaultListModel listModel = new DefaultListModel();
@@ -790,11 +859,11 @@ public class SpaceApp extends javax.swing.JFrame {
          SateliteBOX.setModel(listModel); }  
          }
             
-          public void UranusFiller() {
+       public void UranusFiller() {
             Planet Uranus = UranusGet();
          ArrayList<String> MoonList = MoonNames(Uranus);
 
-         if (EarthBTN.isSelected()){
+         if (UranusBTN.isSelected()){
             SateliteBOX.clearSelection();
          
             DefaultListModel listModel = new DefaultListModel();
@@ -805,11 +874,11 @@ public class SpaceApp extends javax.swing.JFrame {
          SateliteBOX.setModel(listModel); }  
          }
           
-          public void NeptuneFiller() {
+       public void NeptuneFiller() {
             Planet Neptune = NeptuneGet();
          ArrayList<String> MoonList = MoonNames(Neptune);
 
-         if (EarthBTN.isSelected()){
+         if (NeptuneBTN.isSelected()){
             SateliteBOX.clearSelection();
          
             DefaultListModel listModel = new DefaultListModel();
@@ -820,11 +889,11 @@ public class SpaceApp extends javax.swing.JFrame {
          SateliteBOX.setModel(listModel); }  
          } 
           
-         public void PlutoFiller() {
+       public void PlutoFiller() {
             Planet Pluto = PlutoGet();
          ArrayList<String> MoonList = MoonNames(Pluto);
 
-         if (EarthBTN.isSelected()){
+         if (PlutoBTN.isSelected()){
             SateliteBOX.clearSelection();
          
             DefaultListModel listModel = new DefaultListModel();
@@ -834,6 +903,31 @@ public class SpaceApp extends javax.swing.JFrame {
          }
          SateliteBOX.setModel(listModel); }  
          }  
+       
+       
+       public int SatBOXRtrn (){
+           int Sat;
+           Sat =  SateliteBOX.getSelectedIndex();
+           return Sat;      
+       }
+       
+       
+       
+       public Sattelites SatelittesRtrn(Planet InputP, int SatIndex){
+           ArrayList<Sattelites> SatArray = InputP.getSattelites();
+           Sattelites SatRtrn = SatArray.get(SatIndex);
+           return SatRtrn;
+       }
+       
+       public boolean SatDestination(){
+           boolean chk = !SateliteBOX.isSelectionEmpty();
+           return chk;
+       }
+       
+       public String TwoWayTravelTime(String Time){
+           Double Time2 = Double.parseDouble(Time);
+       }
+       
 
              
        
