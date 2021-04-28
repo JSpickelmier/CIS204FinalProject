@@ -62,10 +62,12 @@ public class SpaceApp extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 153, 153));
+        setBackground(new java.awt.Color(0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
 
+        MercuryBTN.setBackground(new java.awt.Color(0, 0, 0));
         MercuryBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        MercuryBTN.setForeground(new java.awt.Color(51, 255, 51));
         MercuryBTN.setText("Mercury");
         MercuryBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +75,9 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        VenusBTN.setBackground(new java.awt.Color(0, 0, 0));
         VenusBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        VenusBTN.setForeground(new java.awt.Color(51, 255, 51));
         VenusBTN.setText("Venus");
         VenusBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +85,9 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        EarthBTN.setBackground(new java.awt.Color(0, 0, 0));
         EarthBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        EarthBTN.setForeground(new java.awt.Color(51, 255, 51));
         EarthBTN.setText("Earth");
         EarthBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +95,9 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        MarsBTN.setBackground(new java.awt.Color(0, 0, 0));
         MarsBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        MarsBTN.setForeground(new java.awt.Color(51, 255, 51));
         MarsBTN.setText("Mars");
         MarsBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +105,9 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        JupiterBTN.setBackground(new java.awt.Color(0, 0, 0));
         JupiterBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        JupiterBTN.setForeground(new java.awt.Color(51, 255, 51));
         JupiterBTN.setText("Jupiter");
         JupiterBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +115,9 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        UranusBTN.setBackground(new java.awt.Color(0, 0, 0));
         UranusBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        UranusBTN.setForeground(new java.awt.Color(51, 255, 51));
         UranusBTN.setText("Uranus");
         UranusBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,7 +125,9 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        SaturnBTN.setBackground(new java.awt.Color(0, 0, 0));
         SaturnBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        SaturnBTN.setForeground(new java.awt.Color(51, 255, 51));
         SaturnBTN.setText("Saturn");
         SaturnBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +135,9 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        NeptuneBTN.setBackground(new java.awt.Color(0, 0, 0));
         NeptuneBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        NeptuneBTN.setForeground(new java.awt.Color(51, 255, 51));
         NeptuneBTN.setText("Neptune");
         NeptuneBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,7 +145,9 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        PlutoBTN.setBackground(new java.awt.Color(0, 0, 0));
         PlutoBTN.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        PlutoBTN.setForeground(new java.awt.Color(51, 255, 51));
         PlutoBTN.setText("Pluto");
         PlutoBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,13 +155,15 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        SateliteBOX.setBackground(new java.awt.Color(0, 0, 0));
         SateliteBOX.setFont(new java.awt.Font("BankGothic Md BT", 0, 12)); // NOI18N
+        SateliteBOX.setForeground(new java.awt.Color(51, 255, 51));
         SateliteBOX.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(SateliteBOX);
 
-        CalculateBTN.setBackground(new java.awt.Color(102, 102, 102));
+        CalculateBTN.setBackground(new java.awt.Color(0, 0, 0));
         CalculateBTN.setFont(new java.awt.Font("BankGothic Md BT", 1, 30)); // NOI18N
-        CalculateBTN.setForeground(new java.awt.Color(0, 51, 255));
+        CalculateBTN.setForeground(new java.awt.Color(51, 255, 51));
         CalculateBTN.setText("Calculate!");
         CalculateBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,29 +171,45 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("BankGothic Md BT", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 255, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Satelites");
+        jLabel1.setOpaque(true);
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("BankGothic Md BT", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 255, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Destination Planets");
+        jLabel2.setOpaque(true);
 
+        OutputTXTBOX.setBackground(new java.awt.Color(0, 0, 0));
         OutputTXTBOX.setColumns(20);
         OutputTXTBOX.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        OutputTXTBOX.setForeground(new java.awt.Color(51, 255, 51));
         OutputTXTBOX.setRows(5);
         OutputTXTBOX.setText("...");
         OutputTXTBOX.setWrapStyleWord(true);
+        OutputTXTBOX.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 0)));
         jScrollPane2.setViewportView(OutputTXTBOX);
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("BankGothic Md BT", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 255, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Modifiers");
+        jLabel4.setOpaque(true);
 
+        ComboBoxDestinationOptions.setBackground(new java.awt.Color(0, 0, 0));
         ComboBoxDestinationOptions.setFont(new java.awt.Font("BankGothic Md BT", 0, 14)); // NOI18N
+        ComboBoxDestinationOptions.setForeground(new java.awt.Color(51, 255, 51));
         ComboBoxDestinationOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destination high orbit", "Destination low orbit", "Destination surface landing" }));
 
+        ComboBoxTripOptions.setBackground(new java.awt.Color(0, 0, 0));
         ComboBoxTripOptions.setFont(new java.awt.Font("BankGothic Md BT", 0, 14)); // NOI18N
+        ComboBoxTripOptions.setForeground(new java.awt.Color(51, 255, 51));
         ComboBoxTripOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "One way trip", "Return trip", " ", " " }));
         ComboBoxTripOptions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,10 +217,15 @@ public class SpaceApp extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 255, 51));
         jLabel5.setText("Please select what type of trip your spacecraft \nwill be undertaking.");
+        jLabel5.setOpaque(true);
 
+        ChkBoxLEO.setBackground(new java.awt.Color(0, 0, 0));
         ChkBoxLEO.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
+        ChkBoxLEO.setForeground(new java.awt.Color(51, 255, 51));
         ChkBoxLEO.setText("Spacecraft begins journey from low earth orbit.");
         ChkBoxLEO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,9 +241,10 @@ public class SpaceApp extends javax.swing.JFrame {
         jScrollPane3.setToolTipText("");
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea1.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("BankGothic Md BT", 0, 13)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(51, 255, 51));
         jTextArea1.setRows(5);
         jTextArea1.setText("If your destination \nis not a satellite \nthen do not select.");
         jScrollPane3.setViewportView(jTextArea1);
@@ -215,83 +257,79 @@ public class SpaceApp extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE))
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(VenusBTN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(MercuryBTN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
-                            .addComponent(EarthBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MarsBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JupiterBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SaturnBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(UranusBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NeptuneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PlutoBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MercuryBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VenusBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(EarthBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(MarsBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JupiterBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SaturnBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UranusBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(NeptuneBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PlutoBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 616, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane3)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(CalculateBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ComboBoxDestinationOptions, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(ComboBoxTripOptions, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ChkBoxLEO, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(62, 62, 62)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(CalculateBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ComboBoxDestinationOptions, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ComboBoxTripOptions, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ChkBoxLEO, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel5))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(MercuryBTN)
-                                .addGap(18, 18, 18)
-                                .addComponent(VenusBTN)
-                                .addGap(18, 18, 18)
-                                .addComponent(EarthBTN)
-                                .addGap(18, 18, 18)
-                                .addComponent(MarsBTN)
-                                .addGap(18, 18, 18)
-                                .addComponent(JupiterBTN)
-                                .addGap(23, 23, 23)
-                                .addComponent(SaturnBTN)
-                                .addGap(18, 18, 18)
-                                .addComponent(UranusBTN)
-                                .addGap(18, 18, 18)
-                                .addComponent(NeptuneBTN)
-                                .addGap(18, 18, 18)
-                                .addComponent(PlutoBTN))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(4, 4, 4))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(MercuryBTN)
+                            .addGap(18, 18, 18)
+                            .addComponent(VenusBTN)
+                            .addGap(18, 18, 18)
+                            .addComponent(EarthBTN)
+                            .addGap(18, 18, 18)
+                            .addComponent(MarsBTN)
+                            .addGap(18, 18, 18)
+                            .addComponent(JupiterBTN)
+                            .addGap(23, 23, 23)
+                            .addComponent(SaturnBTN)
+                            .addGap(18, 18, 18)
+                            .addComponent(UranusBTN)
+                            .addGap(18, 18, 18)
+                            .addComponent(NeptuneBTN)
+                            .addGap(18, 18, 18)
+                            .addComponent(PlutoBTN))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(4, 4, 4)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(ChkBoxLEO)
                         .addGap(18, 18, 18)
                         .addComponent(ComboBoxTripOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -517,7 +555,7 @@ public class SpaceApp extends javax.swing.JFrame {
          else
          if (landstopper == true){ OutputTXTBOX.append("You may not attempt a landing on a gas giant planet!");}
          else{
-       OutputTXTBOX.append("The cost of your voyage is " + "$" +  FinalCost + " of rocket fuel, " + "\n" + DeltaVCost + " Km/s of Delta V, " + "\n" + "and will take aproximantely  "  + Time + " to complete");
+       OutputTXTBOX.append("Fuel Cost: " + "$" +  FinalCost  + "\n" + "Delta V requirements: " + DeltaVCost + "Km/s" + "\n" + "Travel time: "  + Time);
          }
        //"The cost of your voyage is " + "$" +  FormatedCost + " of rocket fuel, " + "\n" + DeltaVCost + " Km/s of Delta V, " + "\n" + "and will take aproximantely  "  + Time + " to complete"
        
